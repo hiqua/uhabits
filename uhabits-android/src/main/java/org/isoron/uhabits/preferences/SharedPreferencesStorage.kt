@@ -46,32 +46,32 @@ class SharedPreferencesStorage
 
     override fun clear() = sharedPrefs.edit().clear().apply()
 
-    override fun getBoolean(key: String, defValue: Boolean) =
+    override fun getBoolean(key: String?, defValue: Boolean): Boolean =
         sharedPrefs.getBoolean(key, defValue)
 
-    override fun getInt(key: String, defValue: Int) =
+    override fun getInt(key: String?, defValue: Int): Int =
         sharedPrefs.getInt(key, defValue)
 
-    override fun getLong(key: String, defValue: Long) =
+    override fun getLong(key: String?, defValue: Long): Long =
         sharedPrefs.getLong(key, defValue)
 
-    override fun getString(key: String, defValue: String): String =
+    override fun getString(key: String?, defValue: String?): String =
         sharedPrefs.getString(key, defValue)!!
 
-    override fun onAttached(preferences: Preferences) {
+    override fun onAttached(preferences: Preferences?) {
         this.preferences = preferences
     }
 
-    override fun putBoolean(key: String, value: Boolean) =
+    override fun putBoolean(key: String?, value: Boolean) =
         sharedPrefs.edit().putBoolean(key, value).apply()
 
-    override fun putInt(key: String, value: Int) =
+    override fun putInt(key: String?, value: Int) =
         sharedPrefs.edit().putInt(key, value).apply()
 
-    override fun putLong(key: String, value: Long) =
+    override fun putLong(key: String?, value: Long) =
         sharedPrefs.edit().putLong(key, value).apply()
 
-    override fun putString(key: String, value: String) =
+    override fun putString(key: String?, value: String?) =
         sharedPrefs.edit().putString(key, value).apply()
 
     override fun remove(key: String) =
