@@ -19,9 +19,9 @@
 
 package org.isoron.uhabits.core.database;
 
-import org.apache.commons.lang3.builder.*;
-import org.isoron.uhabits.core.*;
-import org.junit.*;
+import org.isoron.uhabits.core.BaseUnitTest;
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -29,32 +29,29 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 
-public class RepositoryTest extends BaseUnitTest
-{
+public class RepositoryTest extends BaseUnitTest {
     private Repository<ThingRecord> repository;
 
     private Database db;
 
     @Before
     @Override
-    public void setUp() throws Exception
-    {
+    public void setUp() throws Exception {
         super.setUp();
         this.db = BaseUnitTest.Companion.buildMemoryDatabase();
         repository = new Repository<>(ThingRecord.class, db);
 
         db.execute("drop table if exists tests");
         db.execute("create table tests(" +
-                   "id integer not null primary key autoincrement, " +
-                   "color_number integer not null, score float not null, " +
-                   "name string)");
+                "id integer not null primary key autoincrement, " +
+                "color_number integer not null, score float not null, " +
+                "name string)");
     }
 
     @Test
-    public void testFind() throws Exception
-    {
+    public void testFind() throws Exception {
         db.execute("insert into tests(id, color_number, name, score) " +
-                   "values (10, 20, 'hello', 8.0)");
+                "values (10, 20, 'hello', 8.0)");
 
         ThingRecord record = repository.find(10L);
 
@@ -66,8 +63,7 @@ public class RepositoryTest extends BaseUnitTest
     }
 
     @Test
-    public void testSave_withId() throws Exception
-    {
+    public void testSave_withId() throws Exception {
         ThingRecord record = new ThingRecord();
         record.id = 50L;
         record.color = 10;
@@ -83,8 +79,7 @@ public class RepositoryTest extends BaseUnitTest
     }
 
     @Test
-    public void testSave_withNull() throws Exception
-    {
+    public void testSave_withNull() throws Exception {
         ThingRecord record = new ThingRecord();
         record.color = 50;
         record.name = null;
@@ -98,8 +93,7 @@ public class RepositoryTest extends BaseUnitTest
     }
 
     @Test
-    public void testSave_withoutId() throws Exception
-    {
+    public void testSave_withoutId() throws Exception {
         ThingRecord r1 = new ThingRecord();
         r1.color = 10;
         r1.name = "hello";
@@ -117,8 +111,7 @@ public class RepositoryTest extends BaseUnitTest
     }
 
     @Test
-    public void testRemove() throws Exception
-    {
+    public void testRemove() throws Exception {
         ThingRecord rec1 = new ThingRecord();
         rec1.color = 10;
         rec1.name = "hello";
@@ -145,54 +138,3 @@ public class RepositoryTest extends BaseUnitTest
     }
 }
 
-@Table(name = "tests")
-class ThingRecord
-{
-    @Column
-    public Long id;
-
-    @Column
-    public String name;
-
-    @Column(name = "color_number")
-    public Integer color;
-
-    @Column
-    public Double score;
-
-    @Override
-    public boolean equals(Object o)
-    {
-        if (this == o) return true;
-
-        if (o == null || getClass() != o.getClass()) return false;
-
-        ThingRecord record = (ThingRecord) o;
-
-        return new EqualsBuilder()
-            .append(id, record.id)
-            .append(name, record.name)
-            .append(color, record.color)
-            .isEquals();
-    }
-
-    @Override
-    public int hashCode()
-    {
-        return new HashCodeBuilder(17, 37)
-            .append(id)
-            .append(name)
-            .append(color)
-            .toHashCode();
-    }
-
-    @Override
-    public String toString()
-    {
-        return new ToStringBuilder(this)
-            .append("id", id)
-            .append("name", name)
-            .append("color", color)
-            .toString();
-    }
-}
