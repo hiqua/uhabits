@@ -98,7 +98,7 @@ public class StreakChart extends View
     public void populateWithRandomData()
     {
         Timestamp start = DateUtils.getToday();
-        LinkedList<Streak> streaks = new LinkedList<>();
+        List<Streak> streaks = new LinkedList<>();
 
         for (int i = 0; i < 10; i++)
         {

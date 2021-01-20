@@ -23,50 +23,46 @@ import androidx.test.filters.MediumTest
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
-import org.hamcrest.CoreMatchers
-import org.hamcrest.MatcherAssert
 import org.isoron.uhabits.BaseViewTest
-import org.isoron.uhabits.core.ui.screens.habits.list.HintList
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.mockito.Mockito
 
 @RunWith(AndroidJUnit4::class)
 @MediumTest
-class HintViewTest : BaseViewTest() {
-    private lateinit var view: HintView
-    private lateinit var list: HintList
+class HeaderViewTest : BaseViewTest() {
+    private var view: HeaderView? = null
+
     @Before
     override fun setUp() {
         super.setUp()
-        list = mock()
-        view = HintView(targetContext, list)
-        measureView(view, 400f, 200f)
-        val text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        doReturn(true).whenever(list).shouldShow()
-        doReturn(text).whenever(list).pop()
-        // Mockito.`when`(list.shouldShow()).thenReturn(true)
-        // Mockito.`when`(list.pop()).thenReturn(text)
-        view.showNext()
-        skipAnimation(view)
+        prefs = mock()
+        view = HeaderView(targetContext, prefs, mock())
+        view!!.buttonCount = 5
+        measureView(view, dpToPixels(600), dpToPixels(48))
     }
 
     @Test
     @Throws(Exception::class)
     fun testRender() {
+        Mockito.`when`(prefs.isCheckmarkSequenceReversed).thenReturn(false)
         assertRenders(view, PATH + "render.png")
+        Mockito.verify(prefs).isCheckmarkSequenceReversed
+        Mockito.verifyNoMoreInteractions(prefs)
     }
 
     @Test
     @Throws(Exception::class)
-    fun testClick() {
-        MatcherAssert.assertThat(view.alpha, CoreMatchers.equalTo(1f))
-        view.performClick()
-        skipAnimation(view)
-        MatcherAssert.assertThat(view.alpha, CoreMatchers.equalTo(0f))
+    fun testRender_reverse() {
+        doReturn(true).whenever(prefs).isCheckmarkSequenceReversed
+        // Mockito.`when`(prefs.isCheckmarkSequenceReversed).thenReturn(true)
+        assertRenders(view, PATH + "render_reverse.png")
+        Mockito.verify(prefs).isCheckmarkSequenceReversed
+        Mockito.verifyNoMoreInteractions(prefs)
     }
 
     companion object {
-        const val PATH = "habits/list/HintView/"
+        const val PATH = "habits/list/HeaderView/"
     }
 }
