@@ -110,7 +110,7 @@ dependencies {
     testImplementation("com.google.dagger:dagger:$daggerVersion")
     testImplementation("junit:junit:4.12")
     testImplementation("org.mockito:mockito-core:2.28.2")
-    testImplementation("org.mockito:mockito-inline:2.8.9")
+    testImplementation("org.mockito:mockito-inline:3.7.7")
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
 }
 
