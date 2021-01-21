@@ -30,7 +30,7 @@ import org.isoron.uhabits.R;
 /**
  * A text view which, when pressed or activated, displays a blue circle around the text.
  */
-public class TextViewWithCircularIndicator extends TextView {
+public class TextViewWithCircularIndicator extends androidx.appcompat.widget.AppCompatTextView {
 
     private static final int SELECTED_CIRCLE_ALPHA = 60;
 

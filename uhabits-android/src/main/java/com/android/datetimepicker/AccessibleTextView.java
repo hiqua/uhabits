@@ -27,7 +27,7 @@ import android.widget.TextView;
 /**
  * Fake Button class, used so TextViews can announce themselves as Buttons, for accessibility.
  */
-public class AccessibleTextView extends TextView {
+public class AccessibleTextView extends androidx.appcompat.widget.AppCompatTextView {
 
     public AccessibleTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
