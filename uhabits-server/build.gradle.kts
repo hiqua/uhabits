@@ -43,7 +43,7 @@ dependencies {
     implementation("io.ktor:ktor-html-builder:$ktorVersion")
     implementation("io.ktor:ktor-jackson:$ktorVersion")
     implementation("org.jetbrains:kotlin-css-jvm:1.0.0-pre.31-kotlin-1.2.41")
-    implementation("io.prometheus:simpleclient:0.9.0")
+    implementation("io.prometheus:simpleclient:0.10.0")
     implementation("io.prometheus:simpleclient_httpserver:0.9.0")
     implementation("io.prometheus:simpleclient_hotspot:0.9.0")
     testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
