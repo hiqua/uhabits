@@ -45,7 +45,7 @@ dependencies {
     implementation("org.jetbrains:kotlin-css-jvm:1.0.0-pre.31-kotlin-1.2.41")
     implementation("io.prometheus:simpleclient:0.9.0")
     implementation("io.prometheus:simpleclient_httpserver:0.9.0")
-    implementation("io.prometheus:simpleclient_hotspot:0.9.0")
+    implementation("io.prometheus:simpleclient_hotspot:0.10.0")
     testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
     testImplementation("org.mockito:mockito-core:2.28.2")
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
