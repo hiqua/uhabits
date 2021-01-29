@@ -18,7 +18,7 @@
  */
 
 plugins {
-    id("com.github.triplet.play") version "3.2.0"
+    id("com.github.triplet.play") version "3.2.0-agp4.2-2"
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.kapt")
@@ -68,9 +68,9 @@ android {
 
 dependencies {
     val daggerVersion = "2.31.2"
-    val kotlinVersion = "1.4.21-2"
+    val kotlinVersion = "1.4.21"
     val kxCoroutinesVersion = "1.4.2"
-    val ktorVersion = "1.5.0"
+    val ktorVersion = "1.5.1"
     val espressoVersion = "3.3.0"
 
     androidTestImplementation("androidx.test.espresso:espresso-contrib:$espressoVersion")
@@ -90,7 +90,7 @@ dependencies {
     implementation("com.github.paolorotolo:appintro:3.4.0")
     implementation("com.google.code.findbugs:jsr305:3.0.2")
     implementation("com.google.dagger:dagger:$daggerVersion")
-    implementation("com.google.guava:guava:30.0-android")
+    implementation("com.google.guava:guava:30.1-android")
     implementation("io.ktor:ktor-client-android:$ktorVersion")
     implementation("io.ktor:ktor-client-core:$ktorVersion")
     implementation("io.ktor:ktor-client-jackson:$ktorVersion")
