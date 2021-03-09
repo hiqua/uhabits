@@ -74,17 +74,17 @@ android {
 }
 
 dependencies {
-    val daggerVersion = "2.32"
+    val daggerVersion = "2.33"
     val kotlinVersion = "1.4.30"
-    val kxCoroutinesVersion = "1.4.2"
+    val kxCoroutinesVersion = "1.4.3-native-mt"
     val ktorVersion = "1.5.1"
     val espressoVersion = "3.3.0"
 
     androidTestImplementation("androidx.test.espresso:espresso-contrib:$espressoVersion")
     androidTestImplementation("androidx.test.espresso:espresso-core:$espressoVersion")
     androidTestImplementation("com.google.dagger:dagger:$daggerVersion")
-    androidTestImplementation("com.linkedin.dexmaker:dexmaker-mockito:2.28.0")
-    androidTestImplementation("com.linkedin.testbutler:test-butler-library:2.1.1")
+    androidTestImplementation("com.linkedin.dexmaker:dexmaker-mockito:2.28.1")
+    androidTestImplementation("com.linkedin.testbutler:test-butler-library:2.2.1")
     androidTestImplementation("io.ktor:ktor-client-mock:$ktorVersion")
     androidTestImplementation("io.ktor:ktor-jackson:$ktorVersion")
     androidTestImplementation("androidx.annotation:annotation:1.1.0")
@@ -93,7 +93,7 @@ dependencies {
     androidTestImplementation("androidx.test:rules:1.3.0")
     androidTestImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
     compileOnly("javax.annotation:jsr250-api:1.0")
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.1")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
     implementation("com.github.paolorotolo:appintro:3.4.0")
     implementation("com.google.code.findbugs:jsr305:3.0.2")
     implementation("com.google.dagger:dagger:$daggerVersion")
@@ -115,7 +115,7 @@ dependencies {
     kapt("com.google.dagger:dagger-compiler:$daggerVersion")
     kaptAndroidTest("com.google.dagger:dagger-compiler:$daggerVersion")
     testImplementation("com.google.dagger:dagger:$daggerVersion")
-    testImplementation("junit:junit:4.13.1")
+    testImplementation("junit:junit:4.13.2")
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
 }
 
