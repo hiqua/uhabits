@@ -22,7 +22,7 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 plugins {
     application
     id("kotlin")
-    id("com.github.johnrengelman.shadow") version "6.1.0"
+    id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
 
@@ -33,8 +33,8 @@ application {
 }
 
 dependencies {
-    val ktorVersion = "1.5.2"
-    val kotlinVersion = "1.4.32"
+    val ktorVersion = "1.5.4"
+    val kotlinVersion = "1.5.0"
     val logbackVersion = "1.2.3"
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
