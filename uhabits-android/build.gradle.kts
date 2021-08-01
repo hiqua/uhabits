@@ -37,8 +37,8 @@ android {
     compileSdkVersion(30)
 
     defaultConfig {
-        versionCode(20002)
-        versionName("2.0.2")
+        versionCode(20003)
+        versionName("2.0.3")
         minSdkVersion(23)
         targetSdkVersion(30)
         applicationId("org.isoron.uhabits")
@@ -89,9 +89,9 @@ android {
 
 dependencies {
     val daggerVersion = "2.37"
-    val kotlinVersion = "1.5.20"
-    val kxCoroutinesVersion = "1.4.2"
-    val ktorVersion = "1.6.1"
+    val kotlinVersion = "1.5.21"
+    val kxCoroutinesVersion = "1.5.1"
+    val ktorVersion = "1.6.2"
     val espressoVersion = "3.4.0"
 
     androidTestImplementation("androidx.test.espresso:espresso-contrib:$espressoVersion")
@@ -118,11 +118,11 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$kxCoroutinesVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kxCoroutinesVersion")
-    implementation("androidx.appcompat:appcompat:1.3.0")
+    implementation("androidx.appcompat:appcompat:1.3.1")
     implementation("androidx.legacy:legacy-preference-v14:1.0.0")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("com.google.android.material:material:1.3.0")
-    implementation("com.opencsv:opencsv:5.4")
+    implementation("com.opencsv:opencsv:5.5.1")
     implementation(project(":uhabits-core"))
     kapt("com.google.dagger:dagger-compiler:$daggerVersion")
     kaptAndroidTest("com.google.dagger:dagger-compiler:$daggerVersion")
