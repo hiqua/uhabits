@@ -86,10 +86,10 @@ android {
 }
 
 dependencies {
-    val daggerVersion = "2.40.5"
-    val kotlinVersion = "1.6.10"
+    val daggerVersion = "2.41"
+    val kotlinVersion = "1.6.20"
     val kxCoroutinesVersion = "1.6.0"
-    val ktorVersion = "1.6.7"
+    val ktorVersion = "1.6.8"
     val espressoVersion = "3.4.0"
 
     androidTestImplementation("androidx.test.espresso:espresso-contrib:$espressoVersion")
@@ -105,10 +105,10 @@ dependencies {
     androidTestImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
     compileOnly("javax.annotation:jsr250-api:1.0")
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
-    implementation("com.github.AppIntro:AppIntro:6.1.0")
+    implementation("com.github.AppIntro:AppIntro:6.2.0")
     implementation("com.google.code.findbugs:jsr305:3.0.2")
     implementation("com.google.dagger:dagger:$daggerVersion")
-    implementation("com.google.guava:guava:31.0.1-android")
+    implementation("com.google.guava:guava:31.1-android")
     implementation("io.ktor:ktor-client-android:$ktorVersion")
     implementation("io.ktor:ktor-client-core:$ktorVersion")
     implementation("io.ktor:ktor-client-jackson:$ktorVersion")
@@ -116,11 +116,11 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$kxCoroutinesVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kxCoroutinesVersion")
-    implementation("androidx.appcompat:appcompat:1.3.1")
+    implementation("androidx.appcompat:appcompat:1.4.1")
     implementation("androidx.legacy:legacy-preference-v14:1.0.0")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("com.google.android.material:material:1.4.0")
-    implementation("com.opencsv:opencsv:5.5.2")
+    implementation("com.google.android.material:material:1.5.0")
+    implementation("com.opencsv:opencsv:5.6")
     implementation(project(":uhabits-core"))
     kapt("com.google.dagger:dagger-compiler:$daggerVersion")
     kaptAndroidTest("com.google.dagger:dagger-compiler:$daggerVersion")
